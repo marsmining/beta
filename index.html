@@ -1,0 +1,48 @@
+---
+layout: main
+---
+
+<h2>Index</h2>
+
+<pre>{{ site.categories | inspect }}</pre>
+
+
+
+
+<h4>Stores</h4>
+
+<ul>
+  {% assign last_char = '' %}
+
+  {% for store in site.stores %}
+
+    {% assign curr_char = store.title | slice: 0 %}
+
+    {% if last_char != curr_char %}
+      {{ curr_char }}
+    {% endif %}
+
+    {% assign last_char = curr_char %}
+
+    <li>
+      <a href="{{ store.url }}">{{ store.title }}</a>
+    </li>
+  {% endfor %}
+</ul>
+
+
+
+
+
+
+<h4>Categories</h4>
+
+<ul>
+  {% for cat in site.cats %}
+
+  <li>
+    <a href="{{ cat.url }}">{{ cat.title }}</a>
+  </li>
+
+  {% endfor %}
+</ul>

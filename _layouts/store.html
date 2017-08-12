@@ -1,0 +1,17 @@
+---
+layout: main
+---
+{% include tour.html %}
+
+<h2>{{ page.title }}</h2>
+
+{{ content }}
+
+Categories:
+<ul>
+  {% for cat in page.categories %}
+    <li>{{ cat }}</li>
+  {% endfor %}
+</ul>
+
+<a href="/">Home</a>

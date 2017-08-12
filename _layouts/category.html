@@ -1,0 +1,15 @@
+---
+layout: main
+---
+
+<h2>{{ page.title }}</h2>
+
+{{ content }}
+
+<ul>
+  {% for store in site.stores %}
+    {% if store.categories contains page.title %}
+      <li>{{ store.id }} {{ store.categories }}</li>
+    {% endif %}
+  {% endfor %}
+</ul>
